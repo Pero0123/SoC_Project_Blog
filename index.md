@@ -18,6 +18,10 @@ This module create sync singals, aswell aswell as the current pixel co-orinates.
 **VGAColorCycle.v** 
 This module is the main code for creating an image. It consists of a state machine, each being a specified colour using the red, green and blue registers. The next state is selected after the timer reaches the COUNT_TO register. This creates a colour cylcing effect on the monitor.
 
+ <video width="320" height="240" autoplay>
+  <source src="movie.mp4" type="video/mp4">
+Your browser does not support the video tag.
+</video> 
 
 ### **Simulation**
 Explain the simulation process. Reference any important details, include a well-selected screenshot of the simulation. Guideline: 1/2 short paragraphs.
