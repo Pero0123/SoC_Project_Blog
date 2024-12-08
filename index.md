@@ -16,7 +16,7 @@ This is the top level file and connects everything together.
 This module create sync singals, aswell aswell as the current pixel co-orinates. This allows specifics areas or pixels to be coloured later.
 
 **VGAColorCycle.v** 
-This module is the main code for creating an image. It consists of a state machine, each being a specified colour using the red, green and blue registers. The next state is selected after the timer reaches the COUNT_TO register. This creates a colour cylcing effect on the monitor.
+This module is the main code for creating an image. It consists of a state machine, each being a specified colour using the red, green and blue registers. Each register is 4 bits to allow 256 levels for each colour. The next state is selected after the timer reaches the COUNT_TO register. This creates a colour cycling effect on the monitor.
 
 The images below show the demo working.
 
@@ -30,7 +30,7 @@ Out of curiosity, I recorded the screen in slow motion to see what is causing th
 <img src="https://raw.githubusercontent.com/Pero0123/SoC_Project_Blog/main/docs/assets/images/20241111_160518-ezgif.com-crop.gif" width="320px">
 
 **VGAColor_Stripes.v** 
-This module displays coloured vertical stripes. VGASync is used here to define an area for each colour usinng col and row. After I got this running I changed it to diplay vertical stripes.
+This module displays coloured vertical stripes. VGASync is used here to define an area for each colour usinng col and row. After I got this running I changed it to diplay vertical stripes. I did this by limiting each colour to a small range of rows instead of columns
 
 The images below show the demo working.
 
