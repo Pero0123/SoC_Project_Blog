@@ -19,7 +19,7 @@ This module create sync singals, aswell aswell as the current pixel co-orinates.
 This module is the main code for creating an image. It consists of a state machine, each being a specified colour using the red, green and blue registers. The next state is selected after the timer reaches the COUNT_TO register. This creates a colour cylcing effect on the monitor.
 
  <video width="320" height="240" autoplay>
-  <source src="20241111_160518.mp4" type="video/mp4">
+  <source src="https://raw.githubusercontent.com/melgineer/fpga-vga-verilog/main/docs/assets/20241111_160518.mp4" type="video/mp4">
 Your browser does not support the video tag.
 </video> 
 
