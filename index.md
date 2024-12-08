@@ -1,5 +1,7 @@
 Welcome to my System on Chip (SoC) Project. My name is Pero Schwitalla. The goal of this project is to create an image using the Artix-7 board and Vivado. In this blog I will explain the project and the process of making it.
 
+## **Project Summary**
+### **Tools and Key Terms**
 An FPGA can be reprogrammed "in the field", after the chip is manufactured. FPGAs are commonly used high performance computing and for prototyping[1]. They are very versatile compared to application specific integrated circuits(ASICs) which are designed for a specific purpose an cannot be reprogrammed after manufacture[2]. Video Graphics Array(VGA) is a display standart and connector introduced by IBM. It transmits video as analog signals unlike modern standarts like hdmi which transmit data using digital signals. Each colour has its own analog signal, along with sync signals. The original standart supported a resolution of 640 X 480, 4 bit colours and a 60Hz refresh rate with later implementations improving on this. Vivado was used to Design, Synthesis and simulate the project.[3] Vivado was also used to generate a bitstream to upload to the Artix-7 board. The code was written in verilog. Verilog is a hardware description language or HDL[4].
 
 ## **Project Summary**
