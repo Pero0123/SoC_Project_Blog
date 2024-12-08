@@ -17,9 +17,22 @@ This module create sync singals, aswell aswell as the current pixel co-orinates.
 
 **VGAColorCycle.v** 
 This module is the main code for creating an image. It consists of a state machine, each being a specified colour using the red, green and blue registers. The next state is selected after the timer reaches the COUNT_TO register. This creates a colour cylcing effect on the monitor.
+
+The images below show the demo working.
+
+
 <img src="https://raw.githubusercontent.com/Pero0123/SoC_Project_Blog/main/docs/assets/images/20241111_160448.jpg" width="320px">
 <img src="https://raw.githubusercontent.com/Pero0123/SoC_Project_Blog/main/docs/assets/images/20241111_160450.jpg" width="320px">
 <img src="https://raw.githubusercontent.com/Pero0123/SoC_Project_Blog/main/docs/assets/images/20241111_160459.jpg" width="320px">
+
+**VGAColor_Stripes.v** 
+This module displays coloured vertical stripes. VGASync is used here to define an area for each colour usinng col and row. After I got this running I changed it to diplay vertical stripes.
+
+The images below show the demo working.
+
+
+<img src="https://raw.githubusercontent.com/Pero0123/SoC_Project_Blog/main/docs/assets/images/20241118_162325.jpg" width="320px">
+<img src="https://raw.githubusercontent.com/Pero0123/SoC_Project_Blog/main/docs/assets/images/20241118_163521.jpg" width="320px">
 
 ### **Simulation**
 Explain the simulation process. Reference any important details, include a well-selected screenshot of the simulation. Guideline: 1/2 short paragraphs.
