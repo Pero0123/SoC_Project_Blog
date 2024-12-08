@@ -5,11 +5,12 @@ tags: fpga vga verilog
 categories: demo
 ---
 
-Welcome to my System on Chip (SoC) Project. The goal of this project is to create an image using the FPGA BASYs board and Vivado.
+Welcome to my System on Chip (SoC) Project. The goal of this project is to create an image using the FPGA BASYs board and Vivado. 
+This is the final result of my Project
 
 ## **Template VGA Design**
 ### **Project Set-Up**
-Summarise the project set-up and design flow. Include a screenshot of your own set-up, for example see the image of my Project Summary window below. Guideline 1 short paragraph.
+
 
 <img src="https://raw.githubusercontent.com/melgineer/fpga-vga-verilog/main/docs/assets/images/VGAPrjSum.png">
 ### **Template Code**
