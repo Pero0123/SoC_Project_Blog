@@ -14,7 +14,7 @@ This is the top level file and connects everything together.
 
 **VGASync.v**
 This module create sync singals, aswell aswell as the current pixel co-orinates. This allows specifics areas or pixels to be coloured later.
-<img src="https://raw.githubusercontent.com/Pero0123/SoC_Project_Blog/main/docs/assets/20241208_232704.jpg" width="320px">
+<img src="https://raw.githubusercontent.com/Pero0123/SoC_Project_Blog/blob/main/docs/assets/images/20241208_232704.jpg" width="320px">
 
 **VGAColorCycle.v** 
 This module is the main code for creating an image. It consists of a state machine, each being a specified colour using the red, green and blue registers. Each register is 4 bits to allow 256 levels for each colour. The next state is selected after the timer reaches the COUNT_TO register. This creates a colour cycling effect on the monitor.
