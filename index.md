@@ -25,6 +25,10 @@ The images below show the demo working.
 <img src="https://raw.githubusercontent.com/Pero0123/SoC_Project_Blog/main/docs/assets/images/20241111_160450.jpg" width="320px">
 <img src="https://raw.githubusercontent.com/Pero0123/SoC_Project_Blog/main/docs/assets/images/20241111_160459.jpg" width="320px">
 
+Out of curiosity, I recorded the screen in slow motion to see what is causing the slight flickering. The video shows the new colour begining half way down the screen causing 2 colours being displayed at the same time for a split second. This may be caused by the time delay between states not lining up with the time it takes to display a frame.
+
+<img src="https://raw.githubusercontent.com/Pero0123/SoC_Project_Blog/main/docs/assets/images/20241111_160518-ezgif.com-crop.gif" width="320px">
+
 **VGAColor_Stripes.v** 
 This module displays coloured vertical stripes. VGASync is used here to define an area for each colour usinng col and row. After I got this running I changed it to diplay vertical stripes.
 
@@ -33,6 +37,7 @@ The images below show the demo working.
 
 <img src="https://raw.githubusercontent.com/Pero0123/SoC_Project_Blog/main/docs/assets/images/20241118_162325.jpg" width="320px">
 <img src="https://raw.githubusercontent.com/Pero0123/SoC_Project_Blog/main/docs/assets/images/20241118_163521.jpg" width="320px">
+
 
 ### **Simulation**
 Explain the simulation process. Reference any important details, include a well-selected screenshot of the simulation. Guideline: 1/2 short paragraphs.
