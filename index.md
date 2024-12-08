@@ -5,7 +5,7 @@ tags: fpga vga verilog
 categories: demo
 ---
 
-Add a short welcome message or introduction here. Aim to get the viewer interested in what follows! Guideline: 1 or 2 sentences.
+Welcome to my System on Chip (SoC) Project. The goal of this project is to create an image using the FPGA BASYs board and Vivado.
 
 ## **Template VGA Design**
 ### **Project Set-Up**
