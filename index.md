@@ -140,7 +140,7 @@ Below are screenshots of the Schematic and netlist for the colour cycle design. 
 
 [4] Doulos, "Vivado Software" [Online] Available : https://www.doulos.com/knowhow/verilog/what-is-verilog/
 
-[5] AMD, "Synthesis and Implementation" [Online] Available : https://www.doulos.com/knowhow/verilog/what-is-verilog/](https://adaptivesupport.amd.com/s/question/0D52E00006hpkc2SAA/the-difference-between-implementation-and-synthesize?language=en_US
+[5] AMD, "Synthesis and Implementation" [Online] Available : https://adaptivesupport.amd.com/s/question/0D52E00006hpkc2SAA/the-difference-between-implementation-and-synthesize?language=en_US
 
 [6] vhdlwhiz, "Bitstream" [Online] Available : https://vhdlwhiz.com/terminology/bitstream/#:~:text=A%20bitstream%20is%20a%20file,a%20human%2Dreadable%20hex%20file.
 
