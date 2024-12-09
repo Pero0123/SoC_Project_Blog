@@ -138,7 +138,7 @@ Below are screenshots of the Schematic and netlist for the colour cycle design. 
 
 [3] AMD, "Vivado Software" [Software] Available : https://www.amd.com/en/products/software/adaptive-socs-and-fpgas/vivado.html#advantages
 
-[4] Doulos, "Vivado Software" [Online] Available : https://www.doulos.com/knowhow/verilog/what-is-verilog/
+[4] Doulos, "Vivado Software" [Online] Available : https://www.doulos.com/knowhow/verilog/what-is-verilog
 
 [5] AMD, "Synthesis and Implementation" [Online] Available : https://adaptivesupport.amd.com/s/question/0D52E00006hpkc2SAA/the-difference-between-implementation-and-synthesize?language=en_US
 
