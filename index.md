@@ -134,15 +134,15 @@ Below are screenshots of the Schematic and netlist for the colour cycle design. 
 
 [1] IBM, “What is an FPGA” [Online] Available: [https://en.wikipedia.org/wiki/Application-specific_integrated_circuit](https://www.ibm.com/think/topics/field-programmable-gate-arrays)
 
-[2]Wikipedia, "What is an ASIC" [Online] Available: https://en.wikipedia.org/wiki/Application-specific_integrated_circuit
+[2]Wikipedia, "What is an ASIC" [Online] Available: [https://en.wikipedia.org/wiki/Application-specific_integrated_circuit)
 
-[3] AMD, "Vivado Software" [Software] Available : https://www.amd.com/en/products/software/adaptive-socs-and-fpgas/vivado.html#advantages
+[3] AMD, "Vivado Software" [Software] Available : [https://www.amd.com/en/products/software/adaptive-socs-and-fpgas/vivado.html#advantages)
 
-[4] Doulos, "Vivado Software" [Online] Available : https://www.doulos.com/knowhow/verilog/what-is-verilog
+[4] Doulos, "Vivado Software" [Online] Available : [https://www.doulos.com/knowhow/verilog/what-is-verilog)
 
-[5] AMD, "Synthesis and Implementation" [Online] Available : https://adaptivesupport.amd.com/s/question/0D52E00006hpkc2SAA/the-difference-between-implementation-and-synthesize?language=en_US
+[5] AMD, "Synthesis and Implementation" [Online] Available : [https://adaptivesupport.amd.com/s/question/0D52E00006hpkc2SAA/the-difference-between-implementation-and-synthesize?language=en_US)
 
-[6] vhdlwhiz, "Bitstream" [Online] Available : https://vhdlwhiz.com/terminology/bitstream/#:~:text=A%20bitstream%20is%20a%20file,a%20human%2Dreadable%20hex%20file.
+[6] vhdlwhiz, "Bitstream" [Online] Available : https://vhdlwhiz.com/terminology/bitstream/#:~:text=A%20bitstream%20is%20a%20file,a%20human%2Dreadable%20hex%20file.)
 
 
 
