@@ -7,21 +7,23 @@ An FPGA can be reprogrammed "in the field", after the chip is manufactured. FPGA
 ### **Project Set-Up**
 <img src="https://raw.githubusercontent.com/Pero0123/SoC_Project_Blog/main/docs/assets/images/image.png" width="680px">
 To set the project up, the Artix-7 board was connected to computer running Vivado using a micro usb cable. The board was also connected to a monitor using the vga interface. I started by creating a new project in Vivado and downloading the template files. I added VGASync.v, VGAColorCycle.v and VGATop.v to the design sources. I also edited the clock to run at 25Mhz using the clock wizard. I added the Basys3_Master.xdc file to the constraints folder.
+
 ### **Template Code**
+
 **VGATop.v**
 This is the top level file and connects everything together.
 
 **VGASync.v**
-This module create sync singals, aswell aswell as the current pixel co-orinates. This allows specifics areas or pixels to be coloured later.
-<img src="https://raw.githubusercontent.com/Pero0123/SoC_Project_Blog/blob/main/docs/assets/images/20241208_232704.jpg" width="320px">
+This module create sync singals, aswell aswell as the current pixel co-orinates. This allows specifics areas or pixels to be coloured later. Each pixel has a co-ordinate as shown in the diagram below. The top left is (0,0) and the bottom right is (479,639). This makes it possible to check when a particular pixel is reached and write a specified colour to it.
+
+<img src="https://raw.githubusercontent.com/Pero0123/SoC_Project_Blog/main/docs/assets/images/Screenshot%202024-12-09%20125639.png" width="320px">
 
 **VGAColorCycle.v** 
 This module is the main code for creating an image. It consists of a state machine, each being a specified colour using the red, green and blue registers. Each register is 4 bits to allow 256 levels for each colour. The next state is selected after the timer reaches the COUNT_TO register. This creates a colour cycling effect on the monitor.
 
 The images below show the demo working.
 
-
-<img src="https://raw.githubusercontent.com/Pero0123/SoC_Project_Blog/main/docs/assets/images/20241111_160448.jpg" width="320px">
+<img src="https://raw.githubusercontent.com/Pero0123/SoC_Project_Blog/main/docs/assets/images/20241111_160448.jpg" width="320px"> 
 <img src="https://raw.githubusercontent.com/Pero0123/SoC_Project_Blog/main/docs/assets/images/20241111_160450.jpg" width="320px">
 <img src="https://raw.githubusercontent.com/Pero0123/SoC_Project_Blog/main/docs/assets/images/20241111_160459.jpg" width="320px">
 
@@ -36,12 +38,18 @@ The images below show the demo working.
 
 
 <img src="https://raw.githubusercontent.com/Pero0123/SoC_Project_Blog/main/docs/assets/images/20241118_162325.jpg" width="320px">
+Below is a snippet of the original code. There is an if statement which sets the colour for each 80px column
+<img src="https://raw.githubusercontent.com/Pero0123/SoC_Project_Blog/main/docs/assets/images/Screenshot 2024-12-09 124531.png" width="320px">
 <img src="https://raw.githubusercontent.com/Pero0123/SoC_Project_Blog/main/docs/assets/images/20241118_163521.jpg" width="320px">
+Below is the modified code. Each 60px row is set to a different colour.
+<img src="https://raw.githubusercontent.com/Pero0123/SoC_Project_Blog/main/docs/assets/images/Screenshot 2024-12-09 124627.png" width="320px">
 
 
 ### **Simulation**
 Vivado also supports simulating designs in software. This is usefull to test a design befoe generating the bitstream and uploading to the hardware as this can be a very slow process. To save time, a scaled down version of the project is simulated. the rows only go from 0 to 5 instead of 0 to 479.
+
 <img src="https://raw.githubusercontent.com/Pero0123/SoC_Project_Blog/main/docs/assets/images/Screenshot 2024-12-09 111541.png" width="320px">
+
 ### **Synthesis**
 The next step is to run the Synthesis and Implementation. Synthesis converts the code to a netlist and Implementation uses the netlist as the input and does the routing[5]. After this step a bitstream can be generated. The bistream is a binary file used to configure the FPGA[6].
 
@@ -51,9 +59,30 @@ The next step is to run the Synthesis and Implementation. Synthesis converts the
 
 
 ## **My VGA Design Edit**
-Introduce your own design idea. Consider how complex/achievabble this might be or otherwise. Reference any research you do online (use hyperlinks).
-### **Code Adaptation**
-Briefly show how you changed the template code to display a different image. Demonstrate your understanding. Guideline: 1-2 short paragraphs.
+First I made small edits to the code to the colour stripes file figure out exactly how it works and make sure I understand it. I changed the code to draw only blocks of each colour in the top row. Next I modified the code to display a diagonal line. This was by changing the range for rows and columns for each colour in the if statements.
+
+<img src="https://raw.githubusercontent.com/Pero0123/SoC_Project_Blog/main/docs/assets/images/20241118_174046.jpg" width="320px">
+
+<img src="https://raw.githubusercontent.com/Pero0123/SoC_Project_Blog/main/docs/assets/images/20241118_172408.jpg" width="320px">
+
+Once I felt that I understood the code well, I started to work on my own design. The plan was to create a version of tic tax toe, using colours instead of Xs and Os. I was planning on assigning one switch for every grid position. The first step is to create the grid. I calculated the offset I needed from each side of the screen to center a box. I also divided up this box into a 3x3 grid. The image below is of the rough sketches and calculations used during the design process. Once I had the all the values calculated I started coding each section.
+
+<img src="https://raw.githubusercontent.com/Pero0123/SoC_Project_Blog/main/docs/assets/images/Screenshot 2024-12-09 132059.png" width="320px">
+<img src="https://raw.githubusercontent.com/Pero0123/SoC_Project_Blog/main/docs/assets/images/Screenshot 2024-12-09 132044.png" width="320px">
+
+
+
+<img src="https://raw.githubusercontent.com/Pero0123/SoC_Project_Blog/main/docs/assets/images/20241202_161930.jpg" width="320px">
+
+<img src="https://raw.githubusercontent.com/Pero0123/SoC_Project_Blog/main/docs/assets/images/20241202_174351.jpg" width="320px">
+
+<img src="https://raw.githubusercontent.com/Pero0123/SoC_Project_Blog/main/docs/assets/images/20241202_175025.jpg" width="320px">
+
+<img src="https://raw.githubusercontent.com/Pero0123/SoC_Project_Blog/main/docs/assets/images/20241202_175407.jpg" width="320px">
+
+<img src="https://raw.githubusercontent.com/Pero0123/SoC_Project_Blog/main/docs/assets/images/20241202_175418.jpg" width="320px">
+
+
 ### **Simulation**
 Show how you simulated your own design. Are there any things to note? Demonstrate your understanding. Add a screenshot. Guideline: 1-2 short paragraphs.
 ### **Synthesis**
