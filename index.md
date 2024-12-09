@@ -62,9 +62,9 @@ Below is the modified code. Each 60px row is set to a different colour.
 
 ### **Simulation**
 
-Vivado also supports simulating designs in software. This is usefull to test a design befoe generating the bitstream and uploading to the hardware as this can be a very slow process. To save time, a scaled down version of the project is simulated. the rows only go from 0 to 5 instead of 0 to 479.
+Vivado also supports simulating designs in software. This is usefull to test a design befoe generating the bitstream and uploading to the hardware as this can be a very slow process. I modified the testbench to simulate the entire screen as I found it easier to read this way. The simulation shows the clock at the top. reset is low after the begining as its active high. This is simulating the colour stripes template. We can see that after column 80 is reached the colour changes from black(000) to blue(00f). This is exactly what the code is supposed to do.
 
-<img src="https://raw.githubusercontent.com/Pero0123/SoC_Project_Blog/main/docs/assets/images/Screenshot 2024-12-09 111541.png" width="420px">
+<img src="https://raw.githubusercontent.com/Pero0123/SoC_Project_Blog/main/docs/assets/images/Screenshot 2024-12-09 170928.png" width="900px">
 
 ### **Synthesis**
 
@@ -113,6 +113,12 @@ This is a snippet of the code for the grid.
 This is the code to allow the colour to be changed using one of the switches on the board. I had to add the switch to the constraints file and name it.
 
 <img src="https://raw.githubusercontent.com/Pero0123/SoC_Project_Blog/main/docs/assets/images/Screenshot 2024-12-09 142236.png" width="420px">
+
+
+### **Simulation**
+
+The simulation shows the clock at the top. reset is low after the begining as its active high. The simulation shows the colour going from FFF(white) to 000(Black). This is because its drawing part of the grid, which is set to black, indicating that the code is working.
+![image](https://github.com/user-attachments/assets/b3013d82-f9fe-4e7a-b811-c1e22d2dd4f8)
 
 ### **Synthesis**
 
