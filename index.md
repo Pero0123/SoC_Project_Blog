@@ -40,11 +40,15 @@ The images below show the demo working.
 
 
 ### **Simulation**
-Explain the simulation process. Reference any important details, include a well-selected screenshot of the simulation. Guideline: 1/2 short paragraphs.
+Vivado also supports simulating designs in software. This is usefull to test a design befoe generating the bitstream and uploading to the hardware as this can be a very slow process. To save time, a scaled down version of the project is simulated. the rows only go from 0 to 5 instead of 0 to 479.
+<img src="https://raw.githubusercontent.com/Pero0123/SoC_Project_Blog/main/docs/assets/images/Screenshot 2024-12-09 111541.png" width="320px">
 ### **Synthesis**
-Describe the synthesis and implementation processes. Consider including 1/2 useful screenshot(s). Guideline: 1/2 short paragraphs.
-### **Demonstration**
-Perhaps add a picture of your demo. Guideline: 1/2 sentences.
+The next step is to run the Synthesis and Implementation. Synthesis converts the code to a netlist and Implementation uses the netlist as the input and does the routing[5]. After this step a bitstream can be generated. The bistream is a binary file used to configure the FPGA[6].
+
+
+
+
+
 
 ## **My VGA Design Edit**
 Introduce your own design idea. Consider how complex/achievabble this might be or otherwise. Reference any research you do online (use hyperlinks).
@@ -54,13 +58,14 @@ Briefly show how you changed the template code to display a different image. Dem
 Show how you simulated your own design. Are there any things to note? Demonstrate your understanding. Add a screenshot. Guideline: 1-2 short paragraphs.
 ### **Synthesis**
 Describe the synthesis & implementation outputs for your design, are there any differences to that of the original design? Guideline 1-2 short paragraphs.
-### **Demonstration**
-If you get your own design working on the Basys3 board, take a picture! Guideline: 1-2 sentences.
 
 ## **References**
 [1] IBM, “What is an FPGA” [Online] Available: [https://en.wikipedia.org/wiki/Application-specific_integrated_circuit](https://www.ibm.com/think/topics/field-programmable-gate-arrays)
 [2]Wikipedia, "What is an ASIC" [Online] Available: https://en.wikipedia.org/wiki/Application-specific_integrated_circuit
 [3] AMD, "Vivado Software" [Software] Available : https://www.amd.com/en/products/software/adaptive-socs-and-fpgas/vivado.html#advantages
 [4] Doulos, "Vivado Software" [Online] Available : https://www.doulos.com/knowhow/verilog/what-is-verilog/
+[5] AMD, "Synthesis and Implementation" [Online] Available : https://www.doulos.com/knowhow/verilog/what-is-verilog/](https://adaptivesupport.amd.com/s/question/0D52E00006hpkc2SAA/the-difference-between-implementation-and-synthesize?language=en_US
+[6] vhdlwhiz, "Bitstream" [Online] Available : https://vhdlwhiz.com/terminology/bitstream/#:~:text=A%20bitstream%20is%20a%20file,a%20human%2Dreadable%20hex%20file.
+
 
 
