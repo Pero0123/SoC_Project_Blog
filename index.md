@@ -24,7 +24,9 @@ This module is the main code for creating an image. It consists of a state machi
 The images below show the demo working.
 
 <img src="https://raw.githubusercontent.com/Pero0123/SoC_Project_Blog/main/docs/assets/images/20241111_160448.jpg" width="420px"> 
+
 <img src="https://raw.githubusercontent.com/Pero0123/SoC_Project_Blog/main/docs/assets/images/20241111_160450.jpg" width="420px">
+
 <img src="https://raw.githubusercontent.com/Pero0123/SoC_Project_Blog/main/docs/assets/images/20241111_160459.jpg" width="420px">
 
 Out of curiosity, I recorded the screen in slow motion to see what is causing the slight flickering. The video shows the new colour begining half way down the screen causing 2 colours being displayed at the same time for a split second. This may be caused by the time delay between states not lining up with the time it takes to display a frame.
@@ -38,10 +40,15 @@ The images below show the demo working.
 
 
 <img src="https://raw.githubusercontent.com/Pero0123/SoC_Project_Blog/main/docs/assets/images/20241118_162325.jpg" width="420px">
+
 Below is a snippet of the original code. There is an if statement which sets the colour for each 80px column
+
 <img src="https://raw.githubusercontent.com/Pero0123/SoC_Project_Blog/main/docs/assets/images/Screenshot 2024-12-09 124531.png" width="420px">
+
 <img src="https://raw.githubusercontent.com/Pero0123/SoC_Project_Blog/main/docs/assets/images/20241118_163521.jpg" width="420px">
+
 Below is the modified code. Each 60px row is set to a different colour.
+
 <img src="https://raw.githubusercontent.com/Pero0123/SoC_Project_Blog/main/docs/assets/images/Screenshot 2024-12-09 124627.png" width="420px">
 
 
@@ -51,6 +58,7 @@ Vivado also supports simulating designs in software. This is usefull to test a d
 <img src="https://raw.githubusercontent.com/Pero0123/SoC_Project_Blog/main/docs/assets/images/Screenshot 2024-12-09 111541.png" width="420px">
 
 ### **Synthesis**
+
 The next step is to run the Synthesis and Implementation. Synthesis converts the code to a netlist and Implementation uses the netlist as the input and does the routing[5]. After this step a bitstream can be generated. The bistream is a binary file used to configure the FPGA[6].
 
 
@@ -59,6 +67,7 @@ The next step is to run the Synthesis and Implementation. Synthesis converts the
 
 
 ## **My VGA Design Edit**
+
 First I made small edits to the code to the colour stripes file figure out exactly how it works and make sure I understand it. I changed the code to draw only blocks of each colour in the top row. Next I modified the code to display a diagonal line. This was by changing the range for rows and columns for each colour in the if statements.
 
 <img src="https://raw.githubusercontent.com/Pero0123/SoC_Project_Blog/main/docs/assets/images/20241118_174046.jpg" width="420px">
@@ -68,6 +77,7 @@ First I made small edits to the code to the colour stripes file figure out exact
 Once I felt that I understood the code well, I started to work on my own design. The plan was to create a version of tic tax toe, using colours instead of Xs and Os. I was planning on assigning one switch for every grid position. The first step is to create the grid. I calculated the offset I needed from each side of the screen to center a box. I also divided up this box into a 3x3 grid. The image below is of the rough sketches and calculations used during the design process. Once I had the all the values calculated I started coding each section.
 
 <img src="https://raw.githubusercontent.com/Pero0123/SoC_Project_Blog/main/docs/assets/images/Screenshot 2024-12-09 132059.png" width="420px">
+
 <img src="https://raw.githubusercontent.com/Pero0123/SoC_Project_Blog/main/docs/assets/images/Screenshot 2024-12-09 132044.png" width="420px">
 
 Next I added the grid inside the box and then added if statements which colour in the squares. I choose random colours for these to differentiate them.
@@ -76,6 +86,7 @@ Next I added the grid inside the box and then added if statements which colour i
 <img src="https://raw.githubusercontent.com/Pero0123/SoC_Project_Blog/main/docs/assets/images/20241202_161930.jpg" width="420px">
 
 <img src="https://raw.githubusercontent.com/Pero0123/SoC_Project_Blog/main/docs/assets/images/20241202_174351.jpg" width="420px">
+
 At some point I accidental changed the last if statement which cause the image to change to the one below. I corrected the incorrect row value and changed the colour back to white.
 
 <img src="https://raw.githubusercontent.com/Pero0123/SoC_Project_Blog/main/docs/assets/images/20241202_175025.jpg" width="420px">
@@ -97,6 +108,7 @@ This is the code to allow the colour to be changed using one of the switches on 
 ### **Synthesis**
 
 Below are screenshots of the Schematic of my design and the netlist. Each logical block is one of the source files such as the clock, vga sync and colour cycle. The registers the end are colours which will be written. There are 3 inputs on the left which represent the clock, reset and the input switch a. The input clock is 50Mhz, which is divided to 25Mhz by the first logic block. This signal is used by the vga sync block. the col and row registers from vga sync are connected to the colour cycle block. This allows code which writes to specific. The Schematic and netlist are almost identical to the colourstripes ones because they are based on the same desing and function in a similar way. The only difference is the input switch a.
+
 <img src="https://raw.githubusercontent.com/Pero0123/SoC_Project_Blog/main/docs/assets/images/SchematicEdited.png" width="600px">
 
 <img src="https://raw.githubusercontent.com/Pero0123/SoC_Project_Blog/main/docs/assets/images/Netlist.png" width="400px">
